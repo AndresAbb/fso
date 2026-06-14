@@ -24,14 +24,14 @@ const Content = (props) => {
   console.log(1)
   console.log(parts)
   
-  const RenderedParts = () =>
+  const renderedParts =
     parts.map(part => {
         return (<Part part={part.name} exercises={part.exercises} />)
     })
 
   return (
     <div>
-      <RenderedParts />
+      {renderedParts}
     </div>
   )
 

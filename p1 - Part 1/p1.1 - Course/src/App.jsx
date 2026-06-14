@@ -8,9 +8,6 @@ const Header = (props) => {
 }
 
 const Part = (props) => {
-  console.log(2)
-  console.log(props.part)
-  console.log(props.exercises)
   return (
     <>
       <p>{props.part} {props.exercises}</p>
@@ -26,7 +23,7 @@ const Content = (props) => {
   
   const renderedParts =
     parts.map(part => {
-        return (<Part part={part.name} exercises={part.exercises} />)
+        return (<Part key={part.key} part={part.name} exercises={part.exercises} />)
     })
 
   return (
@@ -54,15 +51,18 @@ const App = () => {
     name: 'Half Stack application development',
     parts: [{
               name: 'Fundamentals of React',
-              exercises: 10
+              exercises: 10,
+              key: 1
             },
             {
               name: 'Using props to pass data',
-              exercises: 7
+              exercises: 7,
+              key: 2
             },
             {
               name: 'State of a component',
-              exercises: 14
+              exercises: 14,
+              key: 3
             }
           ]}
 
